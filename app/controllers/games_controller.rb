@@ -8,11 +8,11 @@ class GamesController < ApplicationController
    @lol = params[:active]
     if params[:active] == "true"
       gon.array = Game.next_step
+    elsif params[:active] == "false"
+      gon.array = Game.reset_game
     else
       gon.array = Game.to_one_dimensional
     end
-
-    #gon.array = Game.to_one_dimensional
   end
 
   # GET /games/1
