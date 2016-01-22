@@ -2,7 +2,7 @@
  * Created by anton on 22.11.15.
  */
 
-var number_of_rows = 30;
+var number_of_rows = 40;
 var a = gon.array;
 var t = document.createElement('table');
 var tbody = document.createElement('tbody');
