@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+
+</head>
+<body id='index'>
+<div id = 'name'><h1>Game of life</h1></div>
+<%= javascript_include_tag 'game' %>
+<div align="center"><form accept-charset="UTF-8" action="/games" method="get">
+  <input type="hidden" name="active" value="true" />
+  <%= submit_tag("Next step") %>
+</form>
+  <form accept-charset="UTF-8" action="/games" method="get">
+    <input type="hidden" name="active" value="false" />
+  <%= submit_tag("Reset") %>
+  </form>
+</div>
+<div align="center"><font color="white"><%= @lol %></font></div>
+
+</body>
+</html>

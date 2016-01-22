@@ -1,0 +1,39 @@
+/*
+*= require_tree .
+*= require_self
+*/
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 3px solid #ffffff;
+    width: 800px;
+    height: 800px;
+    background: #336699;
+}
+
+tr,td{
+    border: 1px solid #ffffff;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+#index{
+    background: #627894;
+}
+
+#circle {
+    width: 100%;
+    height: 100%;
+    background: #990033;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 1px;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+#name{
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
+}

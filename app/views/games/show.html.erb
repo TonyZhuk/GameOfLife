@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+
+</head>
+<body id='index'>
+<div id = 'name'><h1>Game of life</h1></div>\
+<%= javascript_include_tag 'game' %>
+<form accept-charset="UTF-8" action="/games/1" method="get">
+  <%= submit_tag("Next step") %>
+  <div align="center"><font color="white">Это мать вашу ОНННН<%= @lol %></font></div>
+</form>
+</body>
+</html>
