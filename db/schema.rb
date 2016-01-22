@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20160120164813) do
 
   create_table "games", force: :cascade do |t|
     t.integer "current_gen", array: true
-    t.integer "next_gen",    array: true
   end
 
 end

@@ -1,11 +1,14 @@
 class Game < ActiveRecord::Base
-  @size = 30
-  @current_gen = Array.new(@size)
-  @current_gen.each_index do |i|
-    @current_gen[i] = Array.new(@size){rand(0..1)}
+  def self.generate_first_gen
+    @size = 30
+    @current_gen = Array.new(@size)
+    @current_gen.each_index do |i|
+      @current_gen[i] = Array.new(@size){rand(0..1)}
+    end
+    to_view
   end
 
-  def self.to_one_dimensional
+  def self.to_view
     count = 0
     array = Array.new(900){0}
     for i in 0...@size
@@ -19,7 +22,7 @@ class Game < ActiveRecord::Base
 
   def self.next_step
     @current_gen = next_gen(@current_gen)
-    to_one_dimensional
+    to_view
   end
 
   def self.next_gen(current_gen)
@@ -88,7 +91,7 @@ class Game < ActiveRecord::Base
     @current_gen.each_index do |i|
       @current_gen[i] = Array.new(@size){rand(0..1)}
     end
-  to_one_dimensional
+  to_view
   end
 
 end
