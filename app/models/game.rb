@@ -7,6 +7,12 @@ class Game < ActiveRecord::Base
     end
   end
 
+  def self.generate_first_gen_show(arr)
+    @size = 40
+    @current_gen = arr
+  end
+
+
   def self.to_view(current_gen)
     count = 0
     array = Array.new(900){0}

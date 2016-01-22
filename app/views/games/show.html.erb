@@ -6,11 +6,18 @@
 
 </head>
 <body id='index'>
-<div id = 'name'><h1>Game of life</h1></div>\
+<div id = 'name'><h1>Game of life</h1></div>
 <%= javascript_include_tag 'game' %>
-<form accept-charset="UTF-8" action="/games/1" method="get">
+<div align="center"><form accept-charset="UTF-8" action="/games/1" method="get">
+  <input type="hidden" name="active" value="true" />
   <%= submit_tag("Next step") %>
-  <div align="center"><font color="white">Это мать вашу ОНННН<%= @lol %></font></div>
 </form>
+  <form accept-charset="UTF-8" action="/games" method="get">
+    <input type="hidden" name="active" value="false" />
+    <%= submit_tag("Reset") %>
+  </form>
+</div>
+<div align="center"><font color="white"><%= @lol %></font></div>
+
 </body>
 </html>

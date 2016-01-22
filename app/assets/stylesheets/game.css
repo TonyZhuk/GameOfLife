@@ -22,6 +22,11 @@ tr,td{
     background: #627894;
 }
 
+#sub{
+    width: 250px;
+    height: 35px;
+}
+
 #circle {
     width: 100%;
     height: 100%;
@@ -37,3 +42,5 @@ tr,td{
     color: #ffffff;
     margin: auto;
 }
+
+
