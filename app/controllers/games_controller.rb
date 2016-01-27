@@ -5,10 +5,8 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @lol = params[:active]
     game = Game.find(1)
     if params[:active] == "true"
-      puts "TRUE:::!!!!!!!!!!!!!!" + game.current_gen.to_s
       gon.array = Game.next_step(game.current_gen)
       game.current_gen = Game.get_current_gen
       game.save

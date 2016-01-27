@@ -18,11 +18,25 @@ for(var i = 0;i<number_of_rows;i++) {
 t.appendChild(tbody);
 
 cells = t.getElementsByTagName('td');
-for(var i = 0; i < number_of_rows*number_of_rows - 1; i++){
+for(var i = 0; i < number_of_rows*number_of_rows - 1; i++) {
     if (a[i] == 1) cells[i].style.backgroundColor = '#FFB739';
 }
 
-
  if(document.getElementById('name') != null) {
- document.getElementById('name').appendChild(t);
+     document.getElementById('name').appendChild(t);
  }
+
+$("td").click(function() {
+    var col = +$(this).parent().children().index($(this));
+    var row = +$(this).parent().parent().children().index($(this).parent());
+    var c = row * number_of_rows + col;
+    if (a[c] == 0) {
+        $(this).css("background-color", "#FFB739");
+        a[c] = 1;
+    } else if (a[c] == 1){
+        $(this).css("background-color", "#336699");
+        a[c] = 0;
+    }
+});
+
+
