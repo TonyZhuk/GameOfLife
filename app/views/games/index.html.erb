@@ -8,16 +8,5 @@
 <body id='index'>
 <div id = 'name'><h1>Game of life</h1></div>
 <%= javascript_include_tag 'game' %>
-<div align="center"><form accept-charset="UTF-8" action="/games" method="get">
-  <input type="hidden" id="submit" name="active" value="true" />
-  <%= submit_tag("Next step", :id => "sub") %>
-</form>
-  <form accept-charset="UTF-8" action="/games" method="get">
-    <input type="hidden" name="active" value="false" />
-  <%= submit_tag("Reset", :id => "sub") %>
-  </form>
-</div>
-<div align="center"><font color="white"><%= %></font></div>
-
 </body>
 </html>

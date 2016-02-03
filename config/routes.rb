@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   root 'games#index'
   get 'games' => 'games#index'
   post 'games' => 'games#index'
+
+  #get 'games/edit' => 'games#edit'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

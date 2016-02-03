@@ -5,40 +5,26 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    game = Game.find(1)
+   # game = Game.find(1)
     if params[:active] == "true"
-      gon.array = Game.next_step(game.current_gen)
-      game.current_gen = Game.get_current_gen
-      game.save
-    elsif params[:active] == "false"
-      gon.array = Game.reset_game
+      @next_gen = Game.next_step(params[:a])
+      render json: @next_gen
     else
-      Game.generate_first_gen
-      game.current_gen = Game.get_current_gen
-      game.save
-      gon.array = Game.to_view(game.current_gen)
+      gon.array = Game.start_game
     end
   end
+
+
+=begin  def index
+    game = Game.find(1)
+
+  end
+=end
 
   # GET /games/1
   # GET /games/1.json
   def show
-    @lol = params[:active]
-    game = Game.find(params[:id])
-    if params[:active] == "true"
-      puts "TRUE:::!!!!!!!!!!!!!!" + game.current_gen.to_s
-      gon.array = Game.next_step(game.current_gen)
-      game.current_gen = Game.get_current_gen
-      game.save
-    elsif params[:active] == "false"
-      gon.array = Game.reset_game
-    else
-      puts "IN THE BEGINING!!!!" + game.current_gen.to_s
-     Game.generate_first_gen_show(game.current_gen)
-     # game.current_gen = Game.get_current_gen
-      #game.save
-      gon.array = Game.to_view(game.current_gen)
-    end
+
   end
 
   # GET /games/new
