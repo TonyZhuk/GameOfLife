@@ -6,9 +6,11 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
    # game = Game.find(1)
-    if params[:active] == "true"
+    if params[:game] == "run"
       @next_gen = Game.next_step(params[:array])
       render json: @next_gen
+    elsif params[:game] == "reset"
+      render json: @next_gen = Game.start_game
     else
       gon.array = Game.start_game
     end

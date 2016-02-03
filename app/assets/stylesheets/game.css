@@ -27,9 +27,20 @@ tr,td{
     height: 35px;
 }
 
-#button{
+#next_step_button{
     width: 250px;
     height: 35px;
+}
+
+#reset_button{
+    width: 250px;
+    height: 35px;
+}
+
+#counter {
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
 }
 
 
