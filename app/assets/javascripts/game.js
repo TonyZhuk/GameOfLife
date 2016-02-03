@@ -1,5 +1,6 @@
 var number_of_rows = 20;
-a = gon.array;
+array = gon.array;
+
     t = document.createElement('table');
     var tbody = document.createElement('tbody');
     for(var i = 0;i<number_of_rows;i++) {
@@ -14,7 +15,7 @@ a = gon.array;
 
     cells = t.getElementsByTagName('td');
     for(var i = 0; i < number_of_rows*number_of_rows; i++) {
-        if (a[i] == 1) cells[i].style.backgroundColor = '#FFB739';
+        if (array[i] == 1) cells[i].style.backgroundColor = '#FFB739';
     }
 
     if(document.getElementById('name') != null) {
@@ -31,34 +32,34 @@ $('#button').click(function() {
         url: "/games",
         type: "POST",
         cache: false,
-        data: {'a[]': a,'active': "true"},
-        success: function(arr){
-            show(arr)
+        data: {'array[]': array,'active': "true"},
+        success: function(next_gen){
+            show(next_gen)
         }
     });
 });
 
-function show(arr){
+function show(next_gen){
     cells = t.getElementsByTagName('td');
     for(var i = 0; i < number_of_rows*number_of_rows - 1; i++) {
         cells[i].style.backgroundColor = '#336699';
     }
     for(var i = 0; i < number_of_rows*number_of_rows - 1; i++) {
-        if (arr[i] == 1) cells[i].style.backgroundColor = '#FFB739';
+        if (next_gen[i] == 1) cells[i].style.backgroundColor = '#FFB739';
     }
-    a = arr;
+    array = next_gen;
 }
 
 $("td").click(function() {
     var col = +$(this).parent().children().index($(this));
     var row = +$(this).parent().parent().children().index($(this).parent());
     var c = row * number_of_rows + col;
-    if (a[c] == 0) {
+    if (array[c] == 0) {
         $(this).css("background-color", "#FFB739");
-        a[c] = 1;
-    } else if (a[c] == 1){
+        array[c] = 1;
+    } else if (array[c] == 1){
         $(this).css("background-color", "#336699");
-        a[c] = 0;
+        array[c] = 0;
     }
 });
 

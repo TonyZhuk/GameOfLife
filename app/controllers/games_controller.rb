@@ -7,7 +7,7 @@ class GamesController < ApplicationController
   def index
    # game = Game.find(1)
     if params[:active] == "true"
-      @next_gen = Game.next_step(params[:a])
+      @next_gen = Game.next_step(params[:array])
       render json: @next_gen
     else
       gon.array = Game.start_game
